@@ -1,0 +1,124 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/display1.js') }}"></script>
+    <link type="text/css" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+<div id="cover">
+
+  </div>
+<div id="popDiv">
+
+
+
+</div>
+
+
+<div id="headStatic">
+    <div id="title">
+        THE MOVIE DB
+    </div>
+    <div id="colorBar">
+
+    </div>
+</div>
+<div id="bodyDynamic">
+    <div id="tabChoose">
+        <button id="homeTab">
+            Home &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &rarr;
+        </button>
+
+        <button id="searchTab">
+            Search &nbsp &nbsp &nbsp &nbsp &nbsp &rarr;
+        </button>
+    </div>
+    <div id="display1">
+        <div id="trending_movie_box">
+            <div class="box_word">
+                Trending Movies
+            </div>
+
+            <div id="trending_movie_silde" class="slideshow">
+                <ul>
+                    {% for trending_movie in trending_movie_data %}
+                        <li>
+                            <img src={{ trending_movie.backdrop_path }}>
+                            <div class="movie_date">
+                                {{ trending_movie.title_date }}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div id="tv_onair_box">
+            <div class="box_word">
+                TV Shows On-Air Today
+            </div>
+            <div id="tv_onair_silde" class="slideshow">
+                <ul>
+                    {% for airing_today_tv in airing_today_tv_data %}
+                        <li>
+                            <img src={{ airing_today_tv.backdrop_path }}>
+                            <div class="movie_date">
+                                {{ airing_today_tv.name_date }}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div id='staticBottom'>
+            <div>Designed and developed by Akansha, Pranav & Yash</div>
+            <div>Powered by TMDB</div>
+        </div>
+    </div>
+    <div id="display2">
+        <div id="search">
+            <div id="searchTitle">Search</div>
+            {#          method="post"  action="{{ url_for('home') }}"#}
+            <form id="searchForm" onsubmit="return false" >
+                <p><label class="xrequired"> Keyword</label>
+                    <input type="text" value="" id="keywordInput"/>
+                </p>
+                <p>
+                    <label class="xrequired"> Category</label>
+                    <select name="category" id="categoryInput">
+                        <option value="null"></option>
+                        <option value="Movies">Movies</option>
+                        <option value="TVShows">TV Shows</option>
+                        <option value="MoviesTV">Movies and TV Shows</option>
+                    </select>
+                </p>
+                <p>
+                    <button class="searchButton" id="submitButton">Search</button>
+                    <input class="searchButton" id="clearButton" type="reset" value="Clear">
+                </p>
+            </form>
+        </div>
+
+
+        <div id="showAll">
+
+        </div>
+        <div id='staticBottom2'>
+            <div>Designed and developed by Akansha, Pranav & Yash</div>
+            <div>Powered by TMDB</div>
+        </div>
+    </div>
+
+</div>
+<script>
+
+</script>
+</body>
+
+
+</html>
