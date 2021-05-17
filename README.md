@@ -1,5 +1,5 @@
 # THE-MOVIE-DB
-1. Deployed a Flask web application on Azure. 
+1. Deployed a Flask web application on Azure. https://try-flask-app.azurewebsites.net/
 2. Created web pages using HTML, CSS, JavaScript, DOM, JSON and the
 XMLHttpRequest object.
 3. Used third-party API calls (The Movie Database API) from your web
